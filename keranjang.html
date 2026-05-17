@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keranjang Produk Puding</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f8f8f8;
+    }
+
+    .container{
+      display:flex;
+      min-height:100vh;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      width:260px;
+      background:#ff7aa2;
+      color:white;
+      padding:25px;
+    }
+
+    .sidebar h2{
+      margin-bottom:20px;
+      font-size:24px;
+    }
+
+    .menu{
+      list-style:none;
+    }
+
+    .menu li{
+      margin-bottom:12px;
+    }
+
+    .menu button{
+      width:100%;
+      border:none;
+      padding:12px;
+      border-radius:10px;
+      cursor:pointer;
+      background:white;
+      color:#ff4f85;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .menu button:hover,
+    .menu button.active{
+      background:#ff4f85;
+      color:white;
+    }
+
+    /* Content */
+    .content{
+      flex:1;
+      padding:30px;
+    }
+
+    .content h1{
+      margin-bottom:25px;
+      color:#333;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+    }
+
+    .card-body{
+      padding:15px;
+    }
+
+    .card-body h3{
+      margin-bottom:10px;
+      color:#333;
+    }
+
+    .card-body p{
+      color:#666;
+      font-size:14px;
+      margin-bottom:15px;
+    }
+
+    .price{
+      color:#ff4f85;
+      font-weight:bold;
+      margin-bottom:15px;
+      display:block;
+    }
+
+    .buttons{
+      display:flex;
+      gap:10px;
+    }
+
+    .btn{
+      flex:1;
+      padding:10px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .detail{
+      background:#eeeeee;
+    }
+
+    .detail:hover{
+      background:#d6d6d6;
+    }
+
+    .cart{
+      background:#ff4f85;
+      color:white;
+    }
+
+    .cart:hover{
+      background:#e63c72;
+    }
+
+    @media(max-width:768px){
+      .container{
+        flex-direction:column;
+      }
+
+      .sidebar{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Kategori</h2>
+
+      <ul class="menu">
+        <li><button class="active" onclick="showCategory('all', this)">Semua Produk</button></li>
+        <li><button onclick="showCategory('spiku', this)">Spiku Pudding</button></li>
+        <li><button onclick="showCategory('tart', this)">Tart Puding</button></li>
+        <li><button onclick="showCategory('kolam', this)">Kolam Puding</button></li>
+        <li><button onclick="showCategory('sutra', this)">Puding Sutra</button></li>
+        <li><button onclick="showCategory('silky', this)">Silky Dessert</button></li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h1 id="title">Semua Produk</h1>
+
+      <div class="products" id="productContainer">
+
+        <!-- Produk -->
+        <div class="card" data-category="spiku">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200&auto=format&fit=crop" alt="">
+          <div class="card-body">
+            <h3>Spiku Strawberry</h3>
+            <p>Pudding lembut dengan topping strawberry segar.</p>
+            <span class="price">Rp 45.000</span>
+
+            <div class="buttons">
+              <button class="btn detail">Lihat Detail</button>
+              <button class="btn cart">Masukkan Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-category="tart">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop" alt="">
+          <div class="card-body">
+            <h3>Tart Puding Coklat</h3>
+            <p>Perpaduan tart dan puding rasa coklat premium.</p>
+            <span class="price">Rp 70.000</span>
+
+            <div class="buttons">
+              <button class="btn detail">Lihat Detail</button>
+              <button class="btn cart">Masukkan Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-category="kolam">
+          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=1200&auto=format&fit=crop" alt="">
+          <div class="card-body">
+            <h3>Kolam Puding Buah</h3>
+            <p>Puding unik dengan tampilan kolam buah segar.</p>
+            <span class="price">Rp 85.000</span>
+
+            <div class="buttons">
+              <button class="btn detail">Lihat Detail</button>
+              <button class="btn cart">Masukkan Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-category="sutra">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1200&auto=format&fit=crop" alt="">
+          <div class="card-body">
+            <h3>Puding Sutra Vanilla</h3>
+            <p>Tekstur super lembut dengan aroma vanilla.</p>
+            <span class="price">Rp 40.000</span>
+
+            <div class="buttons">
+              <button class="btn detail">Lihat Detail</button>
+              <button class="btn cart">Masukkan Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-category="silky">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop" alt="">
+          <div class="card-body">
+            <h3>Silky Dessert Mangga</h3>
+            <p>Dessert silky rasa mangga yang creamy.</p>
+            <span class="price">Rp 35.000</span>
+
+            <div class="buttons">
+              <button class="btn detail">Lihat Detail</button>
+              <button class="btn cart">Masukkan Keranjang</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showCategory(category, element){
+
+      const cards = document.querySelectorAll('.card');
+      const buttons = document.querySelectorAll('.menu button');
+      const title = document.getElementById('title');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+
+      if(category === 'all'){
+        title.innerText = 'Semua Produk';
+      } else if(category === 'spiku'){
+        title.innerText = 'Spiku Pudding';
+      } else if(category === 'tart'){
+        title.innerText = 'Tart Puding';
+      } else if(category === 'kolam'){
+        title.innerText = 'Kolam Puding';
+      } else if(category === 'sutra'){
+        title.innerText = 'Puding Sutra';
+      } else if(category === 'silky'){
+        title.innerText = 'Silky Dessert';
+      }
+
+      cards.forEach(card => {
+        if(category === 'all'){
+          card.style.display = 'block';
+        } else {
+          if(card.dataset.category === category){
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
