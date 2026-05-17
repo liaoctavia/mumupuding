@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mumu Pudding & Cookies</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fff8f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffb6c1, #ffd6a5);
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+      color: #ff6f91;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      color: #ff6f91;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      background: #fff0f4;
+      border-left: 5px solid #ff6f91;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    footer {
+      background: #ff6f91;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 60px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: white;
+      color: #ff6f91;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffe3ea;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mumu Pudding & Cookies</h1>
+    <p>
+      Toko makanan penutup populer di Kota Malang dengan berbagai varian puding premium,
+      dibuat segar setiap hari dan cocok untuk hampers spesial.
+    </p>
+    <a href="#produk" class="btn">Lihat Produk</a>
+  </header>
+
+  <section class="container about">
+    <div>
+      <h2 class="section-title">Tentang Kami</h2>
+      <p>
+        Mumu Pudding & Cookies dikenal sebagai salah satu toko dessert favorit di Kota Malang.
+        Produk kami dibuat menggunakan bahan berkualitas premium dengan rasa lembut dan manis yang pas.
+      </p>
+
+      <div class="highlight">
+        <strong>Keunggulan Kami:</strong>
+        <ul style="margin-top:10px; padding-left:20px;">
+          <li>Ready stock setiap hari</li>
+          <li>Puding premium dengan tampilan cantik</li>
+          <li>Cocok untuk hampers dan hadiah</li>
+          <li>Fresh dibuat setiap hari</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop" alt="Pudding Dessert" />
+    </div>
+  </section>
+
+  <section class="container" id="produk">
+    <h2 class="section-title">Produk Favorit</h2>
+
+    <div class="products">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1200&auto=format&fit=crop" alt="Silky Pudding" />
+        <div class="card-content">
+          <h3>Silky Pudding</h3>
+          <p>
+            Tekstur super lembut dengan berbagai rasa favorit yang lumer di mulut.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1200&auto=format&fit=crop" alt="Puding Tart" />
+        <div class="card-content">
+          <h3>Puding Tart Ulang Tahun</h3>
+          <p>
+            Dessert cantik dan elegan untuk ulang tahun, acara keluarga, dan hadiah spesial.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1200&auto=format&fit=crop" alt="Spiku Puding" />
+        <div class="card-content">
+          <h3>Spiku Puding</h3>
+          <p>
+            Perpaduan lembut antara spiku dan puding premium dengan rasa yang khas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Mumu Pudding & Cookies — Sweet Moments Every Day</p>
+  </footer>
+
+</body>
+</html>
