@@ -17,15 +17,61 @@
       background:#f8f8f8;
     }
 
-    .container{
+    nav{
+      background:white;
+      padding:15px 40px;
       display:flex;
-      min-height:100vh;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
     }
 
-    /* Sidebar */
+    nav h2{
+      color:#ff6f91;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#333;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#ff6f91;
+    }
+
+    .nav-btn{
+      background:#ff6f91;
+      color:white;
+      padding:10px 18px;
+      border-radius:30px;
+    }
+
+    .nav-btn:hover{
+      background:#ff4f85;
+      color:white;
+    }
+
+    .container{
+      display:flex;
+      min-height:calc(100vh - 80px);
+    }
+
     .sidebar{
       width:260px;
-      background:#ff7aa2;
+      background:#f4719b;
       color:white;
       padding:25px;
     }
@@ -61,7 +107,6 @@
       color:white;
     }
 
-    /* Content */
     .content{
       flex:1;
       padding:30px;
@@ -138,7 +183,7 @@
     }
 
     .detail:hover{
-      background:#d6d6d6;
+      background:#d5d5d5;
     }
 
     .cart{
@@ -158,146 +203,229 @@
       .sidebar{
         width:100%;
       }
+
+      nav{
+        padding:15px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
+  <nav>
+    <h2>
+      <a href="index.html" style="color:#ff6f91; text-decoration:none;">
+        Mumu Pudding
+      </a>
+    </h2>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#tentang">Tentang Kami</a></li>
+      <li><a href="index.html#produk">Produk</a></li>
+      <li><a href="index.html#artikel">Artikel</a></li>
+      <li><a href="index.html#kontak">Kontak</a></li>
+
+      <li>
+        <a href="keranjang.html" class="nav-btn">
+          Keranjang
+        </a>
+      </li>
+    </ul>
+  </nav>
+
   <div class="container">
 
-    <!-- Sidebar -->
+    <!-- SIDEBAR -->
     <div class="sidebar">
       <h2>Kategori</h2>
 
       <ul class="menu">
-        <li><button class="active" onclick="showCategory('all', this)">Semua Produk</button></li>
-        <li><button onclick="showCategory('spiku', this)">Spiku Pudding</button></li>
-        <li><button onclick="showCategory('tart', this)">Tart Puding</button></li>
-        <li><button onclick="showCategory('kolam', this)">Kolam Puding</button></li>
-        <li><button onclick="showCategory('sutra', this)">Puding Sutra</button></li>
-        <li><button onclick="showCategory('silky', this)">Silky Dessert</button></li>
+        <li>
+          <button class="active"
+            onclick="showCategory('all', this)">
+            Semua Produk
+          </button>
+        </li>
+
+        <li>
+          <button onclick="showCategory('spiku', this)">
+            Spiku Pudding
+          </button>
+        </li>
+
+        <li>
+          <button onclick="showCategory('tart', this)">
+            Tart Puding
+          </button>
+        </li>
+
+        <li>
+          <button onclick="showCategory('kolam', this)">
+            Kolam Puding
+          </button>
+        </li>
+
+        <li>
+          <button onclick="showCategory('sutra', this)">
+            Puding Sutra
+          </button>
+        </li>
+
+        <li>
+          <button onclick="showCategory('silky', this)">
+            Silky Dessert
+          </button>
+        </li>
       </ul>
     </div>
 
-    <!-- Content -->
+    <!-- CONTENT -->
     <div class="content">
+
       <h1 id="title">Semua Produk</h1>
 
-      <div class="products" id="productContainer">
+      <div class="products">
 
-        <!-- Produk -->
+        <!-- PRODUK 1 -->
         <div class="card" data-category="spiku">
-          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200&auto=format&fit=crop" alt="">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200&auto=format&fit=crop">
+
           <div class="card-body">
             <h3>Spiku Strawberry</h3>
-            <p>Pudding lembut dengan topping strawberry segar.</p>
+
+            <p>
+              Pudding lembut dengan topping strawberry segar.
+            </p>
+
             <span class="price">Rp 45.000</span>
 
             <div class="buttons">
-              <button class="btn detail">Lihat Detail</button>
-              <button class="btn cart">Masukkan Keranjang</button>
+              <button class="btn detail">
+                Lihat Detail
+              </button>
+
+              <button class="btn cart">
+                Masukkan Keranjang
+              </button>
             </div>
           </div>
         </div>
 
+        <!-- PRODUK 2 -->
         <div class="card" data-category="tart">
-          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop" alt="">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop">
+
           <div class="card-body">
             <h3>Tart Puding Coklat</h3>
-            <p>Perpaduan tart dan puding rasa coklat premium.</p>
+
+            <p>
+              Perpaduan tart dan puding rasa coklat premium.
+            </p>
+
             <span class="price">Rp 70.000</span>
 
             <div class="buttons">
-              <button class="btn detail">Lihat Detail</button>
-              <button class="btn cart">Masukkan Keranjang</button>
+              <button class="btn detail">
+                Lihat Detail
+              </button>
+
+              <button class="btn cart">
+                Masukkan Keranjang
+              </button>
             </div>
           </div>
         </div>
 
+        <!-- PRODUK 3 -->
         <div class="card" data-category="kolam">
-          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=1200&auto=format&fit=crop" alt="">
+          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=1200&auto=format&fit=crop">
+
           <div class="card-body">
             <h3>Kolam Puding Buah</h3>
-            <p>Puding unik dengan tampilan kolam buah segar.</p>
+
+            <p>
+              Puding unik dengan tampilan kolam buah segar.
+            </p>
+
             <span class="price">Rp 85.000</span>
 
             <div class="buttons">
-              <button class="btn detail">Lihat Detail</button>
-              <button class="btn cart">Masukkan Keranjang</button>
-            </div>
-          </div>
-        </div>
+              <button class="btn detail">
+                Lihat Detail
+              </button>
 
-        <div class="card" data-category="sutra">
-          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1200&auto=format&fit=crop" alt="">
-          <div class="card-body">
-            <h3>Puding Sutra Vanilla</h3>
-            <p>Tekstur super lembut dengan aroma vanilla.</p>
-            <span class="price">Rp 40.000</span>
-
-            <div class="buttons">
-              <button class="btn detail">Lihat Detail</button>
-              <button class="btn cart">Masukkan Keranjang</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" data-category="silky">
-          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop" alt="">
-          <div class="card-body">
-            <h3>Silky Dessert Mangga</h3>
-            <p>Dessert silky rasa mangga yang creamy.</p>
-            <span class="price">Rp 35.000</span>
-
-            <div class="buttons">
-              <button class="btn detail">Lihat Detail</button>
-              <button class="btn cart">Masukkan Keranjang</button>
+              <button class="btn cart">
+                Masukkan Keranjang
+              </button>
             </div>
           </div>
         </div>
 
       </div>
     </div>
-
   </div>
 
   <script>
+
     function showCategory(category, element){
 
-      const cards = document.querySelectorAll('.card');
-      const buttons = document.querySelectorAll('.menu button');
-      const title = document.getElementById('title');
+      const cards =
+        document.querySelectorAll('.card');
 
-      buttons.forEach(btn => btn.classList.remove('active'));
+      const buttons =
+        document.querySelectorAll('.menu button');
+
+      const title =
+        document.getElementById('title');
+
+      buttons.forEach(btn =>
+        btn.classList.remove('active')
+      );
+
       element.classList.add('active');
 
       if(category === 'all'){
         title.innerText = 'Semua Produk';
+
       } else if(category === 'spiku'){
         title.innerText = 'Spiku Pudding';
+
       } else if(category === 'tart'){
         title.innerText = 'Tart Puding';
+
       } else if(category === 'kolam'){
         title.innerText = 'Kolam Puding';
+
       } else if(category === 'sutra'){
         title.innerText = 'Puding Sutra';
+
       } else if(category === 'silky'){
         title.innerText = 'Silky Dessert';
       }
 
       cards.forEach(card => {
+
         if(category === 'all'){
+
           card.style.display = 'block';
+
         } else {
+
           if(card.dataset.category === category){
+
             card.style.display = 'block';
+
           } else {
+
             card.style.display = 'none';
           }
         }
       });
     }
+
   </script>
 
 </body>
